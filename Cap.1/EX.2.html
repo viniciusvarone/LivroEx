@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX-2 solicitar e somar dois números</title>
+</head>
+<body>
+    <script>
+
+        //solicitação dos dados / declaração de variáveis
+        let numeroI = Number(prompt("Digite um número"))
+        let numeroII = Number(prompt("Digite outro número"))
+        let condicao = isNaN(numeroI && numeroII)
+
+        //verificação dos dados - se são ou não números
+        while (condicao == true){
+            numeroI = Number(prompt("Erro. A soma só é possível entre números. Digite"))
+            numeroII = Number(prompt("O outro"))
+            condicao = isNaN(numeroI && numeroII) 
+        }
+
+        //saída
+        alert(`A soma entre os números é ${numeroI + numeroII}`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX.1_livro - calcular o dobro de um número</title>
+</head>
+<body>
+    <script>
+        let numero = prompt("Digite um número")
+        let condicao = isNaN(numero) //isNaN retorna 'true' se o dado não for um número
+
+        while (condicao == true) {
+            numero = prompt("Erro. Digite um número")
+            condicao = isNaN(numero)
+        }
+
+        alert("O dobro desse número é :  " + numero * 2)
+
+    </script>
+</body>
+</html>
