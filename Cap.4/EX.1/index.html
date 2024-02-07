@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Peso Ideal</title>
+</head>
+
+<body>
+    <h1>Cáculo IMC</h1>
+
+    <form action="#">
+        <p>Nome:
+            <input type="text" id="nome" required>
+        </p>
+        <p>Sexo:
+            <input type="radio" name="sexo" id="Masc" required> Masculino
+            <input type="radio" name="sexo" id="Fem" required> Feminino
+        </p>
+        <p>Altura:
+            <input type="number" step="0.01" min="0" id="Alt" required>
+        </p>
+        <input type="submit" value="calcular peso ideal">
+    </form>
+
+    <h3></h3>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
