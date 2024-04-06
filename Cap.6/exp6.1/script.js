@@ -25,5 +25,45 @@ frm.addEventListener("submit", (e)=>{
 
 //segundoBotão: Função de urgência.
 frm.BtUrg.addEventListener("click", ()=>{
-    
+    //para caso não houver nome de paciente no input
+    if(!frm.checkValidity()){
+        alert("Informe o nome do paciente a ser atendido em caráter de urgência.")
+        frm.inPaciente.focus()
+        return
+    }
+
+    const nomePac = frm.inPaciente.value;
+    Pacientes.unshift(nomePac);
+
+    let lista = ""
+    Pacientes.forEach((paciente, i) => {
+        lista += `${i + 1}. ${paciente}\n`
+    });
+
+    saidaLista.innerText = lista;
+    frm.inPaciente.value = "";
+    frm.inPaciente.focus();
+})
+
+
+//terceiroBt: Função de atendimento.
+frm.BtAtd.addEventListener("click", () => {
+
+    if (Pacientes.length == 0){
+        alert("Não há pacientes na lista de espera. Adicione um.")
+        frm.inPaciente.focus();
+        return
+    }
+
+    const nomeAtd = Pacientes.shift();
+
+    saidaNome.innerText = nomeAtd;
+
+    lista = ""
+    Pacientes.forEach((paciente, i ) =>{
+        lista += `${i + 1}. ${paciente} \n`
+    })
+
+    saidaLista.innerText = lista;
+    frm.inPaciente.focus();
 })
