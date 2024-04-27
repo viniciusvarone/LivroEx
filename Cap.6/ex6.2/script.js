@@ -22,16 +22,16 @@ frm.addEventListener("submit", (e) => {
             alert(`O número ${numero} já foi apostado, tente outro.`)
         } else {
             Erros.push(numero);
-            const numDeErros = Erros.length();
-            const numDeChances = Chances - respErros;
+            const numDeErros = Erros.length;
+            const numDeChances = Chances - numDeErros;
             respErros.innerText = numDeErros
             respChances.innerText = numDeChances
-            if (Chances == 0){
-                alert('Suas chances acabaram')
+            if (numDeChances == 0){
                 frm.btSubmit.disabled = true
                 respDicas.innerText = `Game Over! O número sorteado era: ${Num_Sorteado}`
+                alert('Suas chances acabaram')
             } else {
-                const dica = numero < Num_Sorteado ? "maior" : "menor"
+                const dica = numero < Num_Sorteado ? "maior" : "menor"  //uso do operador ternário.
                 respDicas.innerText = `Dica: Tente um número ${dica} que ${numero}`
             }
         }
